@@ -14,13 +14,13 @@
 # limitations under the License.
 
 # Create the nginx service
-kubectl create -f nginx-rc.yaml
-kubectl expose rc nginx --port=80
+kubectl apply -f nginx-deployment.yaml
+kubectl expose deployment nginx --port=80
 
 # Create the loadbots
-kubectl create -f vegeta-rc.yaml
+kubectl apply -f vegeta-deployment.yaml
 
 # Create the data aggregator
-kubectl create -f aggregator-rc.yaml
-kubectl expose rc aggregator --port=8080
+kubectl apply -f aggregator-deployment.yaml
+kubectl expose deployment aggregator --port=8080
 
